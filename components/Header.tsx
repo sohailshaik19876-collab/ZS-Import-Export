@@ -33,12 +33,12 @@ const Header: React.FC = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/90 backdrop-blur-md py-4 shadow-lg shadow-gold-500/10' : 'bg-transparent py-6'
+        isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-lg shadow-gold-500/10' : 'bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center space-x-2 cursor-pointer" onClick={(e) => scrollToSection(e, 'root')}>
-          <div className="text-3xl font-serif font-bold gold-gradient-text tracking-tighter">ZS</div>
+        <div className="flex items-center space-x-2 cursor-pointer group" onClick={(e) => scrollToSection(e, 'root')}>
+          <div className="text-4xl md:text-3xl font-serif font-bold gold-gradient-text tracking-tighter transition-transform group-hover:scale-105">ZS</div>
           <div className="hidden sm:block h-8 w-px bg-gold-500/30"></div>
           <div className="hidden sm:block text-[10px] tracking-widest text-gold-500 font-sans font-semibold uppercase">
             Exports<br/>Imports
@@ -67,10 +67,10 @@ const Header: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-gold-500"
+          className="md:hidden text-gold-500 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
 
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
               <a 
                 key={link.name} 
                 href={`#${link.id}`}
-                className="text-xl font-serif text-gold-500"
+                className="text-2xl font-serif text-gold-500"
                 onClick={(e) => scrollToSection(e, link.id)}
               >
                 {link.name}
